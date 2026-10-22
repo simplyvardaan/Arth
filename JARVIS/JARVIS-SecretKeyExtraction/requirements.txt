@@ -1,0 +1,13 @@
+opencv-python
+numpy<2.0
+pyaudio
+torch
+torchaudio
+packaging
+python-dotenv
+google-genai
+elevenlabs
+requests
+fastapi
+uvicorn
+python-multipart
