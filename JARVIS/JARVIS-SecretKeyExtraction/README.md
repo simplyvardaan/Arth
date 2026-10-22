@@ -1,124 +1,148 @@
-# 🪙 ARTH — Paytm AI Voice & Vision Payment Copilot
+# ARTH — Paytm AI Voice and Vision Payment Copilot
 
-> **Moto**: *"Arth: it means wealth. It means meaning."*  
-> **Built for**: Paytm Hackathon — Next-Gen Multimodal Realtime AI Payments  
-> **Repository**: [simplyvardaan/Arth](https://github.com/simplyvardaan/Arth)
-
----
-
-## 📌 Executive Summary
-
-**Arth** is a next-generation multimodal Voice and Vision AI Payment Copilot designed for the Paytm ecosystem. Moving far beyond passive soundboxes and manual smartphone apps, Arth transforms retail counters into intelligent, autonomous, and conversational payment hubs. Powered by **Google Gemini 3.5 Flash**, **Silero VAD**, **OpenCV Computer Vision**, and **Supabase Realtime**, Arth sees, hears, speaks, and transacts in real-time with sub-millisecond internal routing.
+> Moto: "Arth: it means wealth. It means meaning."  
+> Built for: Paytm Hackathon — Next-Gen Multimodal Realtime AI Payments  
+> Repository: [simplyvardaan/Arth](https://github.com/simplyvardaan/Arth)
 
 ---
 
-## 🛑 The Problem: What Merchants & Users Actually Face
+## Executive Summary
 
-India's digital payment ecosystem processes billions of UPI transactions monthly, yet ground-level merchants and everyday customers face severe friction daily:
+ARTH is a multimodal voice and vision AI payment copilot developed for the Paytm retail and merchant ecosystem. Moving beyond passive one-way loudspeakers and manual smartphone screens, ARTH transforms commercial counters into interactive, hands-free payment stations. Powered by Google Gemini 3.5 Flash, Silero Voice Activity Detection (VAD), OpenCV computer vision, and Supabase Realtime, ARTH enables merchants and customers to verify transactions, inspect physical bills, check balances, and execute protected transfers in natural spoken language.
 
-### 1. The Busy Counter Bottleneck (Peak Hours Chaos)
-At kirana stores, chai stalls, and retail counters during rush hours, the merchant's hands are occupied packing goods, managing inventory, and handling customers. Having to wipe flour or oil off their hands, unlock a smartphone, navigate notification trays, or ask customers *"Screenshot dikhaiye"* creates frustrating queues and lost sales.
+---
 
-### 2. Fake Screenshot & Payment Spoofing Scams
-Fraudulent apps that generate spoofed "Payment Successful" screens have caused millions of rupees in merchant losses. Merchants frequently let buyers walk away after seeing a fake green tick, only to realize hours later that no funds arrived in their bank account.
+## Market Reality: Problems, Drawbacks, and The ARTH Solution
 
-### 3. The Passive Soundbox Limitation
-Current market soundboxes are **one-way, dumb audio loudspeakers**. 
-- They can only announce: *"Paytm par 50 rupaye prapt hue"*.
-- They **cannot** answer questions (*"Aaj total kitni kamai hui?"*).
-- They **cannot** check wallet or bank balances.
-- They **cannot** verify invoices or itemized paper bills.
-- They **cannot** initiate or split payments hands-free.
+```mermaid
+graph TD
+    subgraph Problems["1. Ground Reality & Merchant Challenges"]
+        P1["Peak-Hour Counter Chaos<br/>Hands full with stock and cash"]
+        P2["Fake Screenshot Scams<br/>Spoofed green ticks and notifications"]
+        P3["Ambient Noise Pollution<br/>Drowned-out soundbox audio in markets"]
+        P4["Manual Book Reconciliation<br/>Hours spent matching cash at closing"]
+        P5["Voice Payment Vulnerability<br/>Risk of accidental or spoofed transfers"]
+    end
+
+    subgraph Drawbacks["2. Drawbacks of Existing Systems"]
+        D1["Touchscreen Apps:<br/>Requires unlocking, typing, and screen-sharing"]
+        D2["Passive Soundboxes:<br/>1-way broadcast only; cannot answer or inspect"]
+        D3["Generic Voice AI:<br/>No financial guardrails; lacks payment security PIN"]
+    end
+
+    subgraph Solution["3. The ARTH Solution"]
+        A1["Computer Vision Engine:<br/>Reads QR codes and paper invoices via camera"]
+        A2["2-Way Conversational AI:<br/>Speaks Hindi, English, and Hinglish"]
+        A3["Personalised 2-Step Security PIN:<br/>Voice-authenticated confirmation gate"]
+        A4["Zero-Latency Realtime Ledger:<br/>In-memory speed with Supabase sync"]
+    end
+
+    P1 & P2 --> D1
+    P3 & P4 --> D2
+    P5 --> D3
+
+    D1 & D2 & D3 --> Solution
+```
+
+---
+
+## Detailed Problem Analysis
+
+### 1. Counter Rush-Hour Congestion
+At grocery stores, food stalls, and retail counters during peak hours, merchant hands are physically occupied packing items, handling products, and counting currency. Forcing merchants to wipe their hands, unlock a smartphone, check notifications, or ask customers to display screenshots creates long queues, customer irritation, and slower checkout throughput.
+
+### 2. Fake Screenshot and Payment Spoofing Fraud
+Fraudulent mobile apps generate visually identical "Payment Successful" confirmation screens and spoofed green ticks. Merchants without immediate two-way audible verification frequently release merchandise without receiving funds, leading to recurring losses.
+
+### 3. Structural Drawbacks of Traditional Soundboxes
+Traditional merchant soundboxes are passive, one-way loudspeakers.
+- They cannot answer questions regarding daily revenue or passbook history.
+- They cannot verify or parse itemized paper bills.
+- They cannot check bank or wallet balances.
+- They cannot initiate or split payments hands-free.
 
 ### 4. Background Noise in Indian Bazaars
-Street markets and bustling retail stores have high ambient decibel levels. Passive soundboxes often get drowned out by honking vehicles, market chatter, or blaring music, leaving merchants guessing whether a transaction went through.
+High ambient decibel levels in dense commercial areas drown out single audio notifications, leaving merchants uncertain whether funds were credited.
 
-### 5. Accidental & Insecure Voice Payments
-Ordinary voice assistants (like Alexa or Siri) are vulnerable to background speech, unintentional activation, or unauthorized third parties triggering money transfers. Without a robust, personalized security gate, voice payments remain risky.
-
----
-
-## 💡 The Solution: ARTH — The Intelligent AI Payment Copilot
-
-Arth solves every single one of these ground-level challenges by combining **Voice + Vision + Ledger Intelligence**:
-
-```
-                       ┌────────────────────────┐
-                       │   Visual Input (Cam)   │
-                       │   QR / Bills / Cash    │
-                       └───────────┬────────────┘
-                                   │
-┌────────────────────────┐         ▼         ┌────────────────────────┐
-│   Voice Input (Mic)    │ ────► ARTH  ◄──── │   Realtime Ledger      │
-│  Hindi / English / Hing│       ENGINE      │   (Supabase Realtime)  │
-└────────────────────────┘         ▲         └────────────────────────┘
-                                   │
-                       ┌───────────┴────────────┐
-                       │   Voice Response (TTS) │
-                       │  Personalised PIN Gate │
-                       └────────────────────────┘
-```
-
-1. **Multimodal Eyes (Computer Vision)**:
-   - Customers or merchants simply hold up a physical grocery receipt, store bill, or Paytm QR code to the camera.
-   - Arth extracts the payee name, line items, and amount in real-time, completely hands-free.
-2. **Two-Way Conversational Partner**:
-   - Speaks fluent **Hindi, English, and Hinglish**.
-   - Answers balance queries (*"Mera balance kitna hai?"*), passbook history (*"Pichle 3 transaction batao"*), and spend summaries instantly.
-3. **Personalised 2-Step Security Code (PIN)**:
-   - Every user creates their own unique 4-digit Security Code directly via voice.
-   - No payment can ever execute without PIN verification.
-   - If an unauthorized person speaks or provides a wrong code, the transaction is immediately rejected and an audit alert is broadcasted.
-4. **Zero-Latency In-Memory Fast-Path**:
-   - Instant in-memory cache delivers balance and PIN checks in **0.0 ms**, backed by asynchronous cloud synchronization with Supabase Realtime.
-5. **Strict Fintech Guardrail**:
-   - Arth is 100% focused on payments and wealth management. It wittily and politely deflects all off-topic chatter (movies, games, politics) back to the merchant's financial tasks.
+### 5. Absence of Voice Security Gates
+Standard voice assistants risk unauthorized activation from ambient television noise, bystanders, or unauthorized users. Without a personalized security code protocol, automated voice financial transactions remain vulnerable.
 
 ---
 
-## ⚔️ How Are We Different? (Competitive Advantage)
+## The Solution: ARTH Architecture
 
-| Feature | Traditional Soundbox | Mobile UPI Apps | Generic Voice AI (Alexa/Siri) | **ARTH (Paytm Copilot)** |
+ARTH introduces a unified multimodal pipeline combining computer vision, voice recognition, real-time ledger management, and a personalized voice security protocol:
+
+```mermaid
+graph LR
+    User["User / Merchant"] -->|Speaks / Shows Bill| ARTH["ARTH Engine"]
+    Cam["Camera (OpenCV)"] -->|Frame Capture| ARTH
+    Mic["Microphone (Silero VAD)"] -->|Audio Stream| ARTH
+    
+    ARTH --> STT["Gemini STT"]
+    STT --> LLM["Gemini 3.5 Flash Reasoning"]
+    LLM --> Cache["In-Memory Ledger (0ms)"]
+    Cache --> DB["Supabase Realtime Cloud"]
+    
+    ARTH --> Gate{"Security PIN Verified?"}
+    Gate -->|Yes| Exec["Execute Transaction & Broadcast Event"]
+    Gate -->|No| Reject["Reject Transaction & Alert Merchant"]
+    
+    Exec --> TTS["Speech Synthesis (TTS)"]
+    TTS --> User
+```
+
+1. **Multimodal Computer Vision**: Inspects physical store bills, printed invoices, and QR codes held up to the camera, automatically identifying payee details, item lists, and amounts.
+2. **Two-Way Conversational Assistant**: Understands spoken Hindi, English, and Hinglish to answer financial queries, passbook lookups, and transaction commands.
+3. **Personalised 2-Step Security Code (PIN)**: Requires a unique 4-digit security code created verbally by each user. Transactions are programmatically locked until this code is spoken and verified.
+4. **Zero-Latency In-Memory Fast-Path**: Resolves balance lookups and PIN verifications in sub-millisecond timeframes, offloading database sync asynchronously.
+5. **Strict Domain Guardrail**: Enforces financial-only conversations, deflecting non-fintech topics back to business operations.
+
+---
+
+## Competitive Comparison
+
+| Capability | Traditional Soundbox | Mobile UPI Apps | Generic Voice AI (Alexa/Siri) | ARTH (Paytm Copilot) |
 |:---|:---:|:---:|:---:|:---:|
-| **Interaction Model** | 1-Way (Passive speaker) | Touchscreen only | 1-Way / Generalist | **2-Way Conversational Fintech Partner** |
-| **Multimodal Vision** | ❌ None | ❌ Manual Camera scan | ❌ None | **✅ Live AI Vision (Reads QR + Invoices)** |
-| **Hands-Free Operation** | Partial (Audio only) | ❌ Must hold & unlock phone | Partial (General answers only) | **✅ 100% Hands-Free Voice & Vision** |
-| **Passbook & Analytics** | ❌ Cannot answer | ⚠️ Manual app search | ❌ Not integrated with UPI | **✅ Instant Voice Passbook & Spend Summary** |
-| **Security Mechanism** | ❌ None | PIN typing on screen | ❌ Unprotected / Device PIN | **✅ Personalised Voice Security PIN Protocol** |
-| **Response Latency** | 3 - 8 seconds delay | Manual interaction | 2 - 4 seconds | **⚡ 0.0 ms Balance / 2.4 ms PIN Check** |
-| **Domain Restriction** | N/A | Manual | ❌ Answers gossip, trivia | **🛡️ Strict Fintech & Wealth Guardrail** |
-| **Realtime Cloud Sync** | Basic webhook | Poll / Pull | Web services | **🔄 Supabase Realtime WebSocket Channels** |
+| Two-Way Conversational Intelligence | ❌ | ❌ | ⚠️ | ✅ |
+| Multimodal Camera Vision (Bills & QR) | ❌ | ❌ | ❌ | ✅ |
+| 100% Hands-Free Operation | ⚠️ | ❌ | ⚠️ | ✅ |
+| Voice Passbook & Spend Analytics | ❌ | ⚠️ | ❌ | ✅ |
+| Personalised Voice Security PIN | ❌ | ⚠️ | ❌ | ✅ |
+| Sub-Millisecond Balance Lookups | ❌ | ❌ | ❌ | ✅ |
+| Dedicated Fintech Domain Guardrails | ❌ | ⚠️ | ❌ | ✅ |
+| Realtime Cloud Ledger Synchronization | ⚠️ | ⚠️ | ⚠️ | ✅ |
 
 ---
 
-## 🏗️ Technical Architecture
+## Technical Architecture
 
 ```
 arth.py  (Main Entry Point)
-├── Camera Loop (OpenCV, Paytm HUD status overlay)
-│   ├── Real-time Frame Sampling (Sharpness detection)
-│   └── Vision Frame Payload (Multimodal inspection)
+├── Camera Loop (OpenCV, HUD Status Overlay)
+│   ├── Frame Sampling & Laplacian Sharpness Filter
+│   └── Multimodal Vision Integration
 │
-└── Audio Pipeline (PyAudio + Silero VAD daemon)
+└── Audio Pipeline (PyAudio + Silero VAD Daemon)
     └── utils/main_pipeline.py
-        ├── utils/gemini_stt.py           STT (Gemini 3.5 Flash Lite)
+        ├── utils/gemini_stt.py           STT Engine
         ├── utils/conversational_llm.py   Fintech Guardrails & Fast-Path Routing
-        ├── utils/supabase_manager.py     In-Memory Realtime Ledger + Supabase Sync
-        └── utils/elevenlabs_tts.py       Voice Output (ElevenLabs / High-Quality Free TTS)
+        ├── utils/supabase_manager.py     In-Memory Realtime Ledger & Supabase Sync
+        └── utils/elevenlabs_tts.py       Voice Output & Free Fallback Engine
 ```
 
-### ⚡ Performance & Latency Benchmarks
+### Performance Benchmarks
 
-* **VAD Silence Cutoff**: Optimized from `2.0s` to **`760ms`** (industry standard for rapid voice turnaround).
-* **Balance Query Latency**: **`0.0 ms`** (instant in-memory resolution).
-* **Passbook History Latency**: **`0.0 ms`** (instant in-memory resolution).
-* **PIN Setting & Verification**: **`2.44 ms`** (instant algorithmic match + background cloud sync).
+- **VAD Silence Detection**: 760 ms (optimized from 2.0s for conversational pacing).
+- **Balance Query Latency**: 0.0 ms (in-memory fast-path).
+- **Passbook Query Latency**: 0.0 ms (in-memory fast-path).
+- **Personal PIN Verification**: 2.4 ms (in-memory validation with async background sync).
 
 ---
 
-## 🗄️ Database Architecture (Supabase Realtime)
+## Database Architecture (Supabase Realtime)
 
-The database schema is fully defined in [`supabase_schema.sql`](file:///c:/Users/HP/Arsh/Arth/JARVIS/JARVIS-SecretKeyExtraction/supabase_schema.sql):
+The database schema is provided in `supabase_schema.sql`:
 
 ```mermaid
 erDiagram
@@ -155,71 +179,61 @@ erDiagram
     }
 ```
 
-### Realtime Publications
-All tables (`users`, `transactions`, `payment_requests`, `realtime_events`) are published to the `supabase_realtime` replication slot, allowing live updates to dashboard interfaces, web soundboxes, and POS systems.
+---
+
+## Personalised 2-Step Security PIN Protocol
+
+To prevent accidental, ambient, or unauthorized voice payments:
+
+1. **Staging Step**:
+   - User states: "Rahul ko 200 bhejo"
+   - ARTH stages the payment and responds: *"Rahul ko Rs 200 bhejne ke liye, kripya apna 4-digit Paytm Security Code batayein."*
+2. **Verification Step**:
+   - User speaks their unique 4-digit code (e.g., "5678" or "paanch chhe saat aath").
+   - If the code matches that user's record: funds are deducted, the ledger is updated, a realtime event is published, and confirmation is announced.
+   - If the code is incorrect: the transaction is immediately rejected and the staged session is terminated.
 
 ---
 
-## 🔐 Personalised 2-Step Security PIN Protocol
-
-To prevent unauthorized transactions, Arth enforces a strict two-step protocol:
-
-1. **Step 1: Staging**
-   - User says: *"Rahul ko 200 rupaye bhejo"*
-   - Arth stages the transaction: `PENDING_PIN_VERIFICATION` for Rs 200 to Rahul.
-   - Arth speaks: *"Rahul ko Rs 200 bhejne ke liye, kripya apna 4-digit Paytm Security Code batayein."*
-2. **Step 2: Verification**
-   - User states their unique code (e.g. *"5678"* or *"paanch chhe saat aath"*).
-   - If verified against that user's record in Supabase:
-     - Funds are deducted.
-     - Transaction is added to ledger.
-     - Realtime event is broadcasted.
-     - Arth confirms: *"Security Code verified! Rahul ko Rs 200 safaltapoorvak bhej diye gaye."*
-   - If incorrect:
-     - Arth aborts: *"Galat Security Code! Suraksha ke kaaran payment execute nahi hui."*
-
----
-
-## 🚀 Quick Start Guide
+## Getting Started
 
 ### Prerequisites
-* Windows 10/11
-* Python 3.11 or 3.12
-* Webcam & Microphone
+- Windows 10/11
+- Python 3.11 or 3.12
+- Standard Webcam and Microphone
 
-### 1. Installation
-Clone the repository:
-```bash
-git clone https://github.com/simplyvardaan/Arth.git
-cd Arth
-```
+### Setup Instructions
 
-### 2. Configure Environment (`.env`)
-Create a `.env` file in `JARVIS/JARVIS-SecretKeyExtraction/.env`:
-```env
-GEMINI_API_KEY=your_gemini_api_key_here
-SUPABASE_URL=https://your-project.supabase.co
-SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
-SUPABASE_ANON_KEY=your_anon_key
-```
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/simplyvardaan/Arth.git
+   cd Arth
+   ```
 
-### 3. Run Arth (1-Click)
-From the root directory:
-```powershell
-.\run_arth.bat
-```
+2. Configure environment variables in `JARVIS/JARVIS-SecretKeyExtraction/.env`:
+   ```env
+   GEMINI_API_KEY=your_gemini_api_key
+   SUPABASE_URL=https://your-project.supabase.co
+   SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
+   SUPABASE_ANON_KEY=your_anon_key
+   ```
 
-Or run via Python:
-```powershell
-.\JARVIS\JARVIS-SecretKeyExtraction\venv\Scripts\python.exe -u .\JARVIS\JARVIS-SecretKeyExtraction\arth.py
-```
+3. Launch ARTH:
+   ```powershell
+   .\run_arth.bat
+   ```
+
+   Or run via Python:
+   ```powershell
+   .\JARVIS\JARVIS-SecretKeyExtraction\venv\Scripts\python.exe -u .\JARVIS\JARVIS-SecretKeyExtraction\arth.py
+   ```
 
 Press **`q`** in the camera window to exit.
 
 ---
 
-## 👥 Authors & Hackathon Team
+## Project Information
 
-* **Project**: Arth — Paytm AI Payment & Wealth Copilot
-* **Motto**: *"Arth: it means wealth. It means meaning."*
-* **Target**: Paytm Hackathon 2026
+- **Project**: ARTH — Paytm AI Voice & Vision Payment Copilot
+- **Motto**: *"Arth: it means wealth. It means meaning."*
+- **Target Event**: Paytm Hackathon 2026
