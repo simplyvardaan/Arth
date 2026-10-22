@@ -1,9 +1,9 @@
 @echo off
 title Arth - Paytm AI Voice & Vision Copilot
-cd /d "%~dp0JARVIS\JARVIS-SecretKeyExtraction"
+cd /d "%~dp0"
 echo ==============================================================
-echo 🪙  ARTH — Paytm AI Voice & Vision Payment Copilot
-echo     Moto: "Arth: it means wealth. It means meaning."
+echo ARTH — Paytm AI Voice and Vision Payment Copilot
+echo Moto: "Arth: it means wealth. It means meaning."
 echo ==============================================================
 echo.
 echo Launching camera and audio pipelines...
